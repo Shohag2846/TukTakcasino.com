@@ -2,9 +2,9 @@ import React, { useState, useEffect, useCallback, Component } from 'react';
 import { Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { RouletteGame } from './components/RouletteGame';
-import { Login } from './components/Auth/Login';
-import { ProtectedRoute } from './components/Auth/ProtectedRoute';
+import { RouletteGame } from './RouletteGame';
+import { Login } from './Login';
+import { ProtectedRoute } from './ProtectedRoute';
 import { signOut, getActiveSession } from './lib/auth';
 import { 
   Coins, 
