@@ -75,8 +75,8 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 
 import { Register } from './Register';
-import CrashGame from './components/CrashGame';
-import { DiceGame } from './components/DiceGame';
+import CrashGame from './CrashGame';
+import { DiceGame } from './DiceGame';
 
 // --- Types ---
 type ViewState = 'splash' | 'landing' | 'auth' | 'app';
