@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Rocket, History, Users, TrendingUp, AlertCircle, Wallet, Play, Pause, XCircle, CheckCircle2, Zap } from 'lucide-react';
 import { io, Socket } from 'socket.io-client';
 import { toast } from 'react-toastify';
-import { supabase } from '../lib/supabase';
+import { supabase } from '../supabase';
 
 interface CrashBet {
   userId: string;
