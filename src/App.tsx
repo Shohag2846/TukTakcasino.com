@@ -450,7 +450,7 @@ function TournamentView({ t }: { t: any }) {
   );
 }
 
-// apiFetch is now imported from ./lib/api
+// apiFetch is now imported from ./api
 
 export default function App() {
   const navigate = useNavigate();
