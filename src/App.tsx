@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { RouletteGame } from './RouletteGame';
 import { Login } from './Login';
 import { ProtectedRoute } from './ProtectedRoute';
-import { signOut, getActiveSession } from './lib/auth';
+import { signOut, getActiveSession } from '../auth';
 import { 
   Coins, 
   User, 
