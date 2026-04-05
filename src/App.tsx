@@ -100,7 +100,7 @@ interface UserData {
 }
 
 import { apiFetch } from'../api'
-import { supabase, isSupabaseConfigured } from './supabase';
+import { supabase, isSupabaseConfigured } from '../supabase';
 
 const TRANSLATIONS: Record<string, any> = {
   en: {
