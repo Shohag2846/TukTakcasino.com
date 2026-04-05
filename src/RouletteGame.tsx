@@ -24,7 +24,7 @@ import {
 } from 'lucide-react';
 import { io, Socket } from 'socket.io-client';
 import { toast } from 'react-toastify';
-import { supabase, isSupabaseConfigured } from '../lib/supabase';
+import { supabase, isSupabaseConfigured } from '../supabase';
 
 interface RouletteGameProps {
   user: any;
