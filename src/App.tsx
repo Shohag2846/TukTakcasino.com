@@ -99,8 +99,8 @@ interface UserData {
   numeric_id?: string;
 }
 
-import { apiFetch } from './lib/api';
-import { supabase, isSupabaseConfigured } from './lib/supabase';
+import { apiFetch } from './api';
+import { supabase, isSupabaseConfigured } from './supabase';
 
 const TRANSLATIONS: Record<string, any> = {
   en: {
