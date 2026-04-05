@@ -74,7 +74,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-import { Register } from './components/Auth/Register';
+import { Register } from './Register';
 import CrashGame from './components/CrashGame';
 import { DiceGame } from './components/DiceGame';
 
