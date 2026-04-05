@@ -1,0 +1,66 @@
+{
+  "entities": {
+    "profiles": {
+      "title": "User Profile",
+      "description": "Stores user balance, role, and other profile information.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "User's unique ID (UUID from Auth)." },
+        "username": { "type": "string", "description": "User's chosen username." },
+        "email": { "type": "string", "format": "email", "description": "User's email address." },
+        "balance": { "type": "number", "description": "User's real money balance." },
+        "demo_balance": { "type": "number", "description": "User's demo money balance." },
+        "game_mode": { "type": "string", "enum": ["real", "demo"], "description": "Current active game mode." },
+        "role": { "type": "string", "enum": ["user", "admin", "subadmin", "game_manager", "finance_manager"], "description": "User's access role." },
+        "numeric_id": { "type": "string", "description": "A unique 5-digit ID for the user." },
+        "created_at": { "type": "string", "format": "date-time", "description": "Timestamp of profile creation." }
+      },
+      "required": ["id", "username", "email", "balance", "demo_balance", "game_mode", "role"]
+    },
+    "bets": {
+      "title": "Game Bet",
+      "description": "Stores individual bets placed by users.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Unique bet ID." },
+        "user_id": { "type": "string", "description": "ID of the user who placed the bet." },
+        "game_name": { "type": "string", "description": "Name of the game (e.g., roulette, crash)." },
+        "round_id": { "type": "integer", "description": "ID of the game round." },
+        "amount": { "type": "number", "description": "Amount wagered." },
+        "bet_data": { "type": "object", "description": "Game-specific bet data (e.g., position, multiplier)." },
+        "mode": { "type": "string", "enum": ["real", "demo"], "description": "Mode in which the bet was placed." },
+        "status": { "type": "string", "enum": ["pending", "won", "lost"], "description": "Current status of the bet." },
+        "win_amount": { "type": "number", "description": "Amount won, if any." },
+        "created_at": { "type": "string", "format": "date-time", "description": "Timestamp of bet placement." }
+      },
+      "required": ["user_id", "game_name", "round_id", "amount", "mode", "status"]
+    },
+    "game_rounds": {
+      "title": "Game Round",
+      "description": "Stores results and status of individual game rounds.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "integer", "description": "Unique round ID." },
+        "game_name": { "type": "string", "description": "Name of the game." },
+        "result_data": { "type": "object", "description": "Game-specific result data." },
+        "status": { "type": "string", "enum": ["waiting", "active", "finished"], "description": "Current status of the round." },
+        "created_at": { "type": "string", "format": "date-time", "description": "Timestamp of round start." }
+      },
+      "required": ["id", "game_name", "status"]
+    }
+  },
+  "firestore": {
+    "/profiles/{userId}": {
+      "schema": "profiles",
+      "description": "User profile document."
+    },
+    "/bets/{betId}": {
+      "schema": "bets",
+      "description": "Bet document."
+    },
+    "/game_rounds/{roundId}": {
+      "schema": "game_rounds",
+      "description": "Game round document."
+    }
+  }
+}
